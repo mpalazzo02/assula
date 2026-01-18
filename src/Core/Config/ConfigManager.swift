@@ -59,6 +59,37 @@ class ConfigManager {
         save()
     }
     
+    // MARK: - Ignored Apps Management
+    
+    /// Adds an app to the ignored list
+    func addIgnoredApp(_ bundleId: String) {
+        guard !config.ignoredApps.contains(bundleId) else { return }
+        config.ignoredApps.append(bundleId)
+        save()
+        NotificationCenter.default.post(name: .assulaConfigChanged, object: nil)
+    }
+    
+    /// Removes an app from the ignored list
+    func removeIgnoredApp(_ bundleId: String) {
+        config.ignoredApps.removeAll { $0 == bundleId }
+        save()
+        NotificationCenter.default.post(name: .assulaConfigChanged, object: nil)
+    }
+    
+    /// Checks if an app is in the ignored list
+    func isAppIgnored(_ bundleId: String) -> Bool {
+        config.ignoredApps.contains(bundleId)
+    }
+    
+    /// Toggles an app's ignored status
+    func toggleIgnoredApp(_ bundleId: String) {
+        if isAppIgnored(bundleId) {
+            removeIgnoredApp(bundleId)
+        } else {
+            addIgnoredApp(bundleId)
+        }
+    }
+    
     // MARK: - Helpers
     
     private func createConfigDirectoryIfNeeded() {

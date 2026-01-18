@@ -10,7 +10,15 @@ class KeyboardMonitor {
     
     private let vimEngine = VimEngine.shared
     
+    /// Track whether we were in a text field on the last keypress
+    private var wasInTextField: Bool = false
+    
     private init() {}
+    
+    /// Reset text field tracking (call when app switches)
+    func resetTextFieldTracking() {
+        wasInTextField = false
+    }
     
     // MARK: - Start/Stop
     
@@ -81,15 +89,25 @@ class KeyboardMonitor {
             return Unmanaged.passRetained(event)
         }
         
-        // Check if we're in a text input field - if not, switch to insert mode and pass through
-        // This allows Vimium and other browser extensions to work when not in a text field
-        if !AccessibilityService.shared.isTextInputFocused() {
-            print("[KB] Not in text field, passing through")
-            if vimEngine.currentMode != .insert {
-                vimEngine.setMode(.insert)
-            }
+        // Check if we're in a text input field
+        let isInTextField = AccessibilityService.shared.isTextInputFocused()
+        
+        if !isInTextField {
+            // Not in a text field - always reset to insert mode and pass through
+            // This ensures we're in a clean state when we return to a text field
+            // Also allows Vimium and other browser extensions to work
+            print("[KB] Not in text field, resetting to Insert mode and passing through")
+            vimEngine.setMode(.insert)
+            wasInTextField = false
             return Unmanaged.passRetained(event)
         }
+        
+        // We're in a text field - if we just entered it, reset to Insert mode
+        if !wasInTextField {
+            print("[KB] Entered text field, resetting to Insert mode")
+            vimEngine.setMode(.insert)
+        }
+        wasInTextField = true
         
         let keyCode = UInt16(event.getIntegerValueField(.keyboardEventKeycode))
         let flags = event.flags

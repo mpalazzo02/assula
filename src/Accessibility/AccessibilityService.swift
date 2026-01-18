@@ -36,13 +36,12 @@ class AccessibilityService {
         return true
     }
     
-    /// Text input roles in macOS Accessibility
+    /// Text input roles in macOS Accessibility (definite text inputs)
     private static let textInputRoles: Set<String> = [
         "AXTextField",      // Standard text field
         "AXTextArea",       // Multi-line text area
         "AXComboBox",       // Dropdown with text input
         "AXSearchField",    // Search field
-        "AXWebArea",        // Web content (contenteditable, etc.)
     ]
     
     /// Check if the currently focused element is a text input field
@@ -62,17 +61,58 @@ class AccessibilityService {
             return false
         }
         
+        let axElement = element as! AXUIElement
+        
         var role: CFTypeRef?
-        AXUIElementCopyAttributeValue(element as! AXUIElement, kAXRoleAttribute as CFString, &role)
+        AXUIElementCopyAttributeValue(axElement, kAXRoleAttribute as CFString, &role)
         
         guard let roleStr = role as? String else {
             print("[AX] isTextInputFocused: Could not get role")
             return false
         }
         
-        let isTextInput = AccessibilityService.textInputRoles.contains(roleStr)
-        print("[AX] isTextInputFocused: role=\(roleStr), isTextInput=\(isTextInput)")
-        return isTextInput
+        // Check if it's a definite text input role
+        if AccessibilityService.textInputRoles.contains(roleStr) {
+            print("[AX] isTextInputFocused: role=\(roleStr) -> TRUE (text input role)")
+            return true
+        }
+        
+        // For AXWebArea, we need to check if it's actually editable (contenteditable, input, etc.)
+        // AXWebArea covers the entire page, so we check for editability
+        if roleStr == "AXWebArea" {
+            // Check if the element or its focused child has a selected text range
+            // (indicates we're in an editable context)
+            var selectedRange: CFTypeRef?
+            let rangeResult = AXUIElementCopyAttributeValue(axElement, kAXSelectedTextRangeAttribute as CFString, &selectedRange)
+            
+            if rangeResult == .success && selectedRange != nil {
+                print("[AX] isTextInputFocused: role=AXWebArea with AXSelectedTextRange -> TRUE")
+                return true
+            }
+            
+            // Also check for AXValue with editable attribute
+            var isEditable: CFTypeRef?
+            let editableResult = AXUIElementCopyAttributeValue(axElement, "AXEditable" as CFString, &isEditable)
+            if editableResult == .success, let editable = isEditable as? Bool, editable {
+                print("[AX] isTextInputFocused: role=AXWebArea with AXEditable=true -> TRUE")
+                return true
+            }
+            
+            print("[AX] isTextInputFocused: role=AXWebArea (not editable) -> FALSE")
+            return false
+        }
+        
+        // For AXGroup or other roles, check if we're dealing with a text-like element
+        // by checking for text editing attributes
+        var selectedRange: CFTypeRef?
+        let rangeResult = AXUIElementCopyAttributeValue(axElement, kAXSelectedTextRangeAttribute as CFString, &selectedRange)
+        if rangeResult == .success && selectedRange != nil {
+            print("[AX] isTextInputFocused: role=\(roleStr) with AXSelectedTextRange -> TRUE")
+            return true
+        }
+        
+        print("[AX] isTextInputFocused: role=\(roleStr) -> FALSE")
+        return false
     }
     
     // MARK: - Focused Element

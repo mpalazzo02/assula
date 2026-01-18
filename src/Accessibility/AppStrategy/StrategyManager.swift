@@ -92,11 +92,19 @@ class StrategyManager {
         // Notify old strategy of deactivation
         if oldBundleId != bundleId {
             currentStrategy.onAppDeactivated()
+            
+            // Reset to Insert mode when switching apps
+            // This ensures a clean state and avoids confusion
+            VimEngine.shared.setMode(.insert)
+            print("[Strategy] App switch: Reset to Insert mode")
         }
         
         // Get and activate new strategy
         currentStrategy = strategy(for: bundleId)
         currentStrategy.onAppActivated()
+        
+        // Also reset KeyboardMonitor's text field tracking
+        KeyboardMonitor.shared.resetTextFieldTracking()
         
         print("App activated: \(bundleId) -> Strategy: \(type(of: currentStrategy))")
     }

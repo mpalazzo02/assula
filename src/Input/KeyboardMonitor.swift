@@ -81,6 +81,16 @@ class KeyboardMonitor {
             return Unmanaged.passRetained(event)
         }
         
+        // Check if we're in a text input field - if not, switch to insert mode and pass through
+        // This allows Vimium and other browser extensions to work when not in a text field
+        if !AccessibilityService.shared.isTextInputFocused() {
+            print("[KB] Not in text field, passing through")
+            if vimEngine.currentMode != .insert {
+                vimEngine.setMode(.insert)
+            }
+            return Unmanaged.passRetained(event)
+        }
+        
         let keyCode = UInt16(event.getIntegerValueField(.keyboardEventKeycode))
         let flags = event.flags
         

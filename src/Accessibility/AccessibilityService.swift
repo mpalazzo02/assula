@@ -36,6 +36,45 @@ class AccessibilityService {
         return true
     }
     
+    /// Text input roles in macOS Accessibility
+    private static let textInputRoles: Set<String> = [
+        "AXTextField",      // Standard text field
+        "AXTextArea",       // Multi-line text area
+        "AXComboBox",       // Dropdown with text input
+        "AXSearchField",    // Search field
+        "AXWebArea",        // Web content (contenteditable, etc.)
+    ]
+    
+    /// Check if the currently focused element is a text input field
+    /// Returns false if not in a text field (e.g., buttons, links, empty page)
+    func isTextInputFocused() -> Bool {
+        let systemWide = AXUIElementCreateSystemWide()
+        var focusedElement: CFTypeRef?
+        
+        let result = AXUIElementCopyAttributeValue(
+            systemWide,
+            kAXFocusedUIElementAttribute as CFString,
+            &focusedElement
+        )
+        
+        guard result == .success, let element = focusedElement else {
+            print("[AX] isTextInputFocused: No focused element")
+            return false
+        }
+        
+        var role: CFTypeRef?
+        AXUIElementCopyAttributeValue(element as! AXUIElement, kAXRoleAttribute as CFString, &role)
+        
+        guard let roleStr = role as? String else {
+            print("[AX] isTextInputFocused: Could not get role")
+            return false
+        }
+        
+        let isTextInput = AccessibilityService.textInputRoles.contains(roleStr)
+        print("[AX] isTextInputFocused: role=\(roleStr), isTextInput=\(isTextInput)")
+        return isTextInput
+    }
+    
     // MARK: - Focused Element
     
     /// Gets the currently focused UI element

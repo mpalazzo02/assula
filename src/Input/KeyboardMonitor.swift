@@ -76,6 +76,11 @@ class KeyboardMonitor {
             return Unmanaged.passRetained(event)
         }
         
+        // Check if Assula is disabled for the current app - pass all keys through
+        if !AccessibilityService.shared.isEnabledForCurrentApp {
+            return Unmanaged.passRetained(event)
+        }
+        
         let keyCode = UInt16(event.getIntegerValueField(.keyboardEventKeycode))
         let flags = event.flags
         

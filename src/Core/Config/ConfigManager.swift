@@ -178,7 +178,8 @@ struct AssulaConfig: Codable {
             "com.apple.Terminal",
             "com.googlecode.iterm2",
             "io.alacritty",
-            "com.mitchellh.ghostty"
+            "com.mitchellh.ghostty",
+            "com.github.wez.wezterm"
         ],
         fallbackApps: [],
         keyRepeatRateMs: 35,

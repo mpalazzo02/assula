@@ -59,7 +59,7 @@ Open-source Vim mode for macOS. Brings Vim-style modal editing to any applicatio
 ### From Source
 
 ```bash
-git clone https://github.com/your-username/assula.git
+git clone https://github.com/mpalazzo02/assula.git
 cd assula
 open Assula.xcodeproj
 ```

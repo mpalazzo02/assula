@@ -275,7 +275,7 @@ struct AboutView: View {
             
             Divider()
             
-            Link("View on GitHub", destination: URL(string: "https://github.com/your-username/assula")!)
+            Link("View on GitHub", destination: URL(string: "https://github.com/mpalazzo02/assula")!)
             
             Text("MIT License")
                 .font(.caption2)

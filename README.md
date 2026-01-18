@@ -56,6 +56,19 @@ Open-source Vim mode for macOS. Brings Vim-style modal editing to any applicatio
 
 ## Installation
 
+### Homebrew (Recommended)
+
+```bash
+brew tap mpalazzo02/assula
+brew install --cask assula
+```
+
+### Manual Download
+
+Download the latest release from [GitHub Releases](https://github.com/mpalazzo02/assula/releases).
+
+> **Note:** Since Assula is not signed with an Apple Developer ID, on first launch you may need to right-click the app and select "Open".
+
 ### From Source
 
 ```bash
@@ -65,12 +78,6 @@ open Assula.xcodeproj
 ```
 
 Build and run with Xcode (Cmd+R).
-
-### Homebrew (coming soon)
-
-```bash
-brew install --cask assula
-```
 
 ## Usage
 
@@ -221,7 +228,6 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 - [ ] Unit tests
 
 ### Future
-- [ ] Homebrew installation
 - [ ] Custom key mappings
 - [ ] Plugin system
 - [ ] Lua configuration

@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* AssulaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* AssulaApp.swift */; };
+		A10000000000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* AppDelegate.swift */; };
+		A10000000000000000000003 /* VimMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* VimMode.swift */; };
+		A10000000000000000000004 /* VimState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* VimState.swift */; };
+		A10000000000000000000005 /* VimEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* VimEngine.swift */; };
+		A10000000000000000000006 /* KeySequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* KeySequence.swift */; };
+		A10000000000000000000007 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* Motion.swift */; };
+		A10000000000000000000008 /* CharacterMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* CharacterMotions.swift */; };
+		A10000000000000000000009 /* WordMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000009 /* WordMotions.swift */; };
+		A10000000000000000000010 /* LineMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* LineMotions.swift */; };
+		A10000000000000000000011 /* FindMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000017 /* FindMotions.swift */; };
+		A10000000000000000000012 /* SearchMotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000018 /* SearchMotions.swift */; };
+		A10000000000000000000013 /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000019 /* TextObject.swift */; };
+		A10000000000000000000014 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000020 /* ConfigManager.swift */; };
+		A10000000000000000000015 /* AccessibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* AccessibilityService.swift */; };
+		A10000000000000000000016 /* AppStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000021 /* AppStrategy.swift */; };
+		A10000000000000000000017 /* DefaultStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000022 /* DefaultStrategy.swift */; };
+		A10000000000000000000018 /* BrowserStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000023 /* BrowserStrategies.swift */; };
+		A10000000000000000000019 /* NativeAppStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000024 /* NativeAppStrategies.swift */; };
+		A10000000000000000000020 /* StrategyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000025 /* StrategyManager.swift */; };
+		A10000000000000000000021 /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* KeyboardMonitor.swift */; };
+		A10000000000000000000022 /* SketchyBarClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* SketchyBarClient.swift */; };
+		A10000000000000000000023 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000014 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* AssulaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssulaApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* VimMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimMode.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* VimState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimState.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* VimEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimEngine.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* KeySequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySequence.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* CharacterMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMotions.swift; sourceTree = "<group>"; };
+		A20000000000000000000009 /* WordMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordMotions.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* LineMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMotions.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* AccessibilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityService.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* KeyboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMonitor.swift; sourceTree = "<group>"; };
+		A20000000000000000000013 /* SketchyBarClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchyBarClient.swift; sourceTree = "<group>"; };
+		A20000000000000000000014 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A20000000000000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000016 /* Assula.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Assula.entitlements; sourceTree = "<group>"; };
+		A20000000000000000000017 /* FindMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMotions.swift; sourceTree = "<group>"; };
+		A20000000000000000000018 /* SearchMotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMotions.swift; sourceTree = "<group>"; };
+		A20000000000000000000019 /* TextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObject.swift; sourceTree = "<group>"; };
+		A20000000000000000000020 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		A20000000000000000000021 /* AppStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrategy.swift; sourceTree = "<group>"; };
+		A20000000000000000000022 /* DefaultStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStrategy.swift; sourceTree = "<group>"; };
+		A20000000000000000000023 /* BrowserStrategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserStrategies.swift; sourceTree = "<group>"; };
+		A20000000000000000000024 /* NativeAppStrategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAppStrategies.swift; sourceTree = "<group>"; };
+		A20000000000000000000025 /* StrategyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyManager.swift; sourceTree = "<group>"; };
+		A30000000000000000000001 /* Assula.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assula.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000002 /* src */,
+				A50000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A50000000000000000000002 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000004 /* App */,
+				A50000000000000000000005 /* Core */,
+				A50000000000000000000009 /* Accessibility */,
+				A50000000000000000000010 /* Input */,
+				A50000000000000000000011 /* Integrations */,
+				A50000000000000000000013 /* UI */,
+				A50000000000000000000014 /* Resources */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30000000000000000000001 /* Assula.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* AssulaApp.swift */,
+				A20000000000000000000002 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000005 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000006 /* VimEngine */,
+				A50000000000000000000007 /* Motions */,
+				A50000000000000000000015 /* TextObjects */,
+				A50000000000000000000016 /* Config */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000006 /* VimEngine */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000003 /* VimMode.swift */,
+				A20000000000000000000004 /* VimState.swift */,
+				A20000000000000000000005 /* VimEngine.swift */,
+				A20000000000000000000006 /* KeySequence.swift */,
+			);
+			path = VimEngine;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000007 /* Motions */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000007 /* Motion.swift */,
+				A20000000000000000000008 /* CharacterMotions.swift */,
+				A20000000000000000000009 /* WordMotions.swift */,
+				A20000000000000000000010 /* LineMotions.swift */,
+				A20000000000000000000017 /* FindMotions.swift */,
+				A20000000000000000000018 /* SearchMotions.swift */,
+			);
+			path = Motions;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000015 /* TextObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000019 /* TextObject.swift */,
+			);
+			path = TextObjects;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000016 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000020 /* ConfigManager.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000009 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000011 /* AccessibilityService.swift */,
+				A50000000000000000000017 /* AppStrategy */,
+			);
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000017 /* AppStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000021 /* AppStrategy.swift */,
+				A20000000000000000000022 /* DefaultStrategy.swift */,
+				A20000000000000000000023 /* BrowserStrategies.swift */,
+				A20000000000000000000024 /* NativeAppStrategies.swift */,
+				A20000000000000000000025 /* StrategyManager.swift */,
+			);
+			path = AppStrategy;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000010 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000012 /* KeyboardMonitor.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000011 /* Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000012 /* SketchyBar */,
+			);
+			path = Integrations;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000012 /* SketchyBar */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000013 /* SketchyBarClient.swift */,
+			);
+			path = SketchyBar;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000013 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000014 /* SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000014 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000015 /* Info.plist */,
+				A20000000000000000000016 /* Assula.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A60000000000000000000001 /* Assula */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000000000000000000001 /* Build configuration list for PBXNativeTarget "Assula" */;
+			buildPhases = (
+				A70000000000000000000001 /* Sources */,
+				A40000000000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Assula;
+			productName = Assula;
+			productReference = A30000000000000000000001 /* Assula.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A90000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A60000000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A80000000000000000000002 /* Build configuration list for PBXProject "Assula" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A50000000000000000000001;
+			productRefGroup = A50000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A60000000000000000000001 /* Assula */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* AssulaApp.swift in Sources */,
+				A10000000000000000000002 /* AppDelegate.swift in Sources */,
+				A10000000000000000000003 /* VimMode.swift in Sources */,
+				A10000000000000000000004 /* VimState.swift in Sources */,
+				A10000000000000000000005 /* VimEngine.swift in Sources */,
+				A10000000000000000000006 /* KeySequence.swift in Sources */,
+				A10000000000000000000007 /* Motion.swift in Sources */,
+				A10000000000000000000008 /* CharacterMotions.swift in Sources */,
+				A10000000000000000000009 /* WordMotions.swift in Sources */,
+				A10000000000000000000010 /* LineMotions.swift in Sources */,
+				A10000000000000000000011 /* FindMotions.swift in Sources */,
+				A10000000000000000000012 /* SearchMotions.swift in Sources */,
+				A10000000000000000000013 /* TextObject.swift in Sources */,
+				A10000000000000000000014 /* ConfigManager.swift in Sources */,
+				A10000000000000000000015 /* AccessibilityService.swift in Sources */,
+				A10000000000000000000016 /* AppStrategy.swift in Sources */,
+				A10000000000000000000017 /* DefaultStrategy.swift in Sources */,
+				A10000000000000000000018 /* BrowserStrategies.swift in Sources */,
+				A10000000000000000000019 /* NativeAppStrategies.swift in Sources */,
+				A10000000000000000000020 /* StrategyManager.swift in Sources */,
+				A10000000000000000000021 /* KeyboardMonitor.swift in Sources */,
+				A10000000000000000000022 /* SketchyBarClient.swift in Sources */,
+				A10000000000000000000023 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B10000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B10000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		B20000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = src/Resources/Assula.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = src/Resources/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026. MIT License.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.assula.Assula;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B20000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = src/Resources/Assula.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = src/Resources/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026. MIT License.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.assula.Assula;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80000000000000000000001 /* Build configuration list for PBXNativeTarget "Assula" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B20000000000000000000001 /* Debug */,
+				B20000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000000000000000000002 /* Build configuration list for PBXProject "Assula" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B10000000000000000000001 /* Debug */,
+				B10000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = A90000000000000000000001 /* Project object */;
+}

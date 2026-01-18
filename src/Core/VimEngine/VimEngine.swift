@@ -115,18 +115,25 @@ class VimEngine: ObservableObject {
             print("[INSERT] Checking escape sequence, buffer before: \(keySequenceParser.pendingKeys)")
             
             if keySequenceParser.addKey(event.key) {
-                print("[INSERT] Escape sequence matched! Switching to normal mode")
-                // Escape sequence completed!
-                setMode(.normal)
-                // Delete all characters of the escape sequence that were typed
-                // Use fallback (keyboard simulation) for WebAreas
-                if accessibilityService.needsFallbackMode() {
-                    accessibilityService.simulateDelete(count: escapeSeq.count - 1)
-                } else {
-                    for _ in 0..<(escapeSeq.count - 1) {
-                        accessibilityService.deleteBackward()
+                print("[INSERT] Escape sequence matched! Deleting \(escapeSeq.count - 1) chars then switching to normal mode")
+                
+                // Delete the first character(s) of escape sequence BEFORE switching modes
+                // This ensures deletion happens while still in the text field context
+                let charsToDelete = escapeSeq.count - 1
+                if charsToDelete > 0 {
+                    if accessibilityService.needsFallbackMode() {
+                        print("[INSERT] Using fallback delete for \(charsToDelete) chars")
+                        accessibilityService.simulateDelete(count: charsToDelete)
+                    } else {
+                        print("[INSERT] Using accessibility delete for \(charsToDelete) chars")
+                        for _ in 0..<charsToDelete {
+                            accessibilityService.deleteBackward()
+                        }
                     }
                 }
+                
+                // Now switch to normal mode
+                setMode(.normal)
                 return true // Consume the final key
             }
             print("[INSERT] Buffer after: \(keySequenceParser.pendingKeys)")

@@ -337,11 +337,37 @@ class AccessibilityService {
     
     // MARK: - Fallback Mode (Keyboard Simulation)
     
-    /// Check if current element is a WebArea (needs fallback mode)
+    /// Bundle IDs of apps that should always use fallback mode for text manipulation
+    /// These are apps where accessibility APIs (setSelectedRange, setSelectedText) don't work reliably
+    private static let fallbackModeApps: Set<String> = [
+        "org.mozilla.firefox",           // Firefox
+        "org.mozilla.firefoxdeveloperedition",
+        "org.mozilla.nightly",
+        "com.google.Chrome",             // Chrome
+        "com.google.Chrome.canary",
+        "com.brave.Browser",             // Brave
+        "com.microsoft.edgemac",         // Edge
+        "com.operasoftware.Opera",       // Opera
+        "com.vivaldi.Vivaldi",           // Vivaldi
+        "company.thebrowser.Browser",    // Arc
+    ]
+    
+    /// Check if current element needs fallback mode (keyboard simulation instead of accessibility APIs)
+    /// Returns true for:
+    /// - WebArea elements (contenteditable, web-based text fields)
+    /// - Browser apps where accessibility text manipulation doesn't work reliably
     func needsFallbackMode() -> Bool {
         guard let element = getFocusedElement() else { 
             print("[AX] needsFallbackMode: no focused element, returning true")
             return true 
+        }
+        
+        // Check if current app is a browser that needs fallback mode
+        if let bundleId = NSWorkspace.shared.frontmostApplication?.bundleIdentifier {
+            if AccessibilityService.fallbackModeApps.contains(bundleId) {
+                print("[AX] needsFallbackMode: returning TRUE (browser app: \(bundleId))")
+                return true
+            }
         }
         
         var role: CFTypeRef?
@@ -413,9 +439,12 @@ class AccessibilityService {
     
     /// Simulate delete using backspace (fallback for WebAreas)
     func simulateDelete(count: Int = 1) {
-        for _ in 0..<count {
+        print("[AX] simulateDelete called with count=\(count)")
+        for i in 0..<count {
+            print("[AX] simulateDelete: pressing backspace \(i+1)/\(count)")
             simulateKeyPress(keyCode: 51) // Backspace
         }
+        print("[AX] simulateDelete done")
     }
     
     /// Simulate selection with shift+arrow (fallback for WebAreas)
